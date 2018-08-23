@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/node:8.11
+
+    working_directory: ~/repo
+
+    steps:
+    - checkout
+
+    - run:
+        name: Yarn install
+        command: yarn install --force
+
+    - run:
+        name: Build
+        command: yarn production
+
+    - run:
+        name: Publish to NPM
+        command: |
+          if [ "$CIRCLE_BRANCH" == 'master' ]; then
+            node_modules/.bin/gulp tar -cf npm.tar index.tsx aweza-popup.css package.json README.md LICENSE.md dist
+
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
+            npm publish
+          fi;
+
+    - run:
+        name: FTP release to Fastacademy.co.za
+        command: |
+          if [ "$CIRCLE_BRANCH" == 'master' ]; then
+            curl -T "{$(echo dist/* | tr ' ' ',')}" ftp://fastacademy.co.za/circleci/AwezaPopup/ --user ${FTP_USER}:${FTP_PASSWORD}
+          fi;
