@@ -33,6 +33,7 @@ function fetchTerm(id) {
         if (response.status === 404) {
             throw 'Error: Term not found'
         }
+        console.log(response)
         return response.json()
     })
 }
@@ -68,11 +69,14 @@ function AwezaPopup(options) {
         theme: 'aweza',
         maxWidth: '250px',
         duration: [50, 50],
-        html: document.querySelector('#aweza-popup-app'),
+        html: '#aweza-popup-app',
         onShown() {
             const tooltipContents = Array.from(this.children[0].children)
                 .find((child) => child.className === 'tippy-content')
+
+            console.log(tooltipContents)
             if (tooltipContents.innerHTML == '') {
+                console.log('innasd')
                 render(<PopupContents termID={this._reference.dataset.aweza}/>, tooltipContents);
             }
         }
@@ -91,6 +95,8 @@ class PopupContents extends Component {
     }
 
     componentDidMount() {
+        console.log('asd')
+
         fetchTerm(this.state.termID)
             .then(data => this.setCurrentTerm(data))
             .catch(e => {
@@ -105,7 +111,7 @@ class PopupContents extends Component {
                     setTimeout(() => {
                         tippyContent.innerHTML = ''
                         tooltip.hide()
-                    },1000)
+                    },2000)
                 })
             })
     }
@@ -179,7 +185,6 @@ class CategorySection extends Component {
 }
 
 class DefinitionSection extends Component {
-
     render() {
         return (
             <div class="aweza-definition">
@@ -201,10 +206,16 @@ class DefinitionSection extends Component {
 }
 
 class DefinitionText extends Component {
-
     render() {
-        const audio_source = this.props.audio || null
-        const audio_player_id = `aweza-term-${this.props.id}-definition-audio`;
+        const audio_source = this.props.audio ?
+            this.props.audio
+            :
+            this.props.tts.text.length > 0 ?
+                this.props.tts.text[0].url
+                :
+                null
+
+        const audio_player_id = `aweza-term-${this.props.id}-text-audio`;
         return (
             <div class="aweza-definition-text">
                 <div class="aweza-definition-text-left">
@@ -223,7 +234,14 @@ class DefinitionText extends Component {
 
 class DefinitionDescription extends Component {
     render() {
-        const audio_source = this.props.description_audio || null
+        const audio_source = this.props.description_audio ?
+            this.props.description_audio
+            :
+            this.props.tts.description.length > 0 ?
+                this.props.tts.description[0].url
+                :
+                null
+
         const audio_player_id = `aweza-term-${this.props.id}-definition-audio`;
         return (
             <div class="aweza-definition-description">
@@ -255,7 +273,14 @@ class ExampleSection extends Component {
 
 class ExampleText extends Component {
     render() {
-        const audio_source = this.props.example_audio
+        const audio_source = this.props.example_audio ?
+            this.props.example_audio
+            :
+            this.props.tts.example.length > 0 ?
+                this.props.tts.example[0].url
+                :
+                null
+
         const audio_player_id = `aweza-term-${this.props.id}-example-audio`;
         return (
             <div class="aweza-example-text">
