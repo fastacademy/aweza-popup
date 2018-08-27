@@ -21,10 +21,10 @@ jobs:
         name: Publish to NPM
         command: |
           if [ "$CIRCLE_BRANCH" == 'master' ]; then
-            node_modules/.bin/gulp tar -cf npm.tar index.tsx aweza-popup.css package.json README.md LICENSE.md dist
+            node_modules/.bin/gulp tar -cvf npm.tar index.tsx aweza-popup.css package.json README.md LICENSE.md dist
 
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
-            npm publish
+            npm publish npm.tar
           fi;
 
     - run:
