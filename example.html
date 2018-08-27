@@ -1,17 +1,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="http://localhost:8383/aweza-popup.css"/>
-        <script src="http://localhost:8383/aweza-popup.js"></script>
+        <link rel="stylesheet" href="dist/aweza-popup.css"/>
+        <script src="dist/aweza-popup.js"></script>
         <script>
           window.onload = function() {
             window.AwezaPopup({
-              dataUrl: 'http://awezatms.test/api/term',
               headers: {
-                "AWEZA-KEY": 'a9e4db54cecd597b8afd3325d185d302',
-                "AWEZA-SECRET": '07ecf23fa58ca8a1464d6c212e2d8c505ea960ca6dd9104ea1062fcacd63b375'
+                "AWEZA-KEY": '647acdfd8dfc3e99e1c8ad25cb9c8b62',
+                "AWEZA-SECRET": '9a025a014260875c58e22804a7134cd578c42270cf10311b0ca14dad7241ec85'
               },
-              preferLang: 'de'
+              preferLang: 'de',
+              dataUrl: "https://www.tms2.local/api/term"
             })
           }
         </script>
