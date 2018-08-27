@@ -16,8 +16,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/** @jsx h */
+
 import {h, render, Component} from 'preact';
 import tippy from 'tippy.js'
+
 
 let dataUrl = 'https://tms2.aweza.co.za/api/term'
 let headers = {}
@@ -33,7 +36,6 @@ function fetchTerm(id) {
         if (response.status === 404) {
             throw 'Error: Term not found'
         }
-        console.log(response)
         return response.json()
     })
 }
@@ -74,9 +76,7 @@ function AwezaPopup(options) {
             const tooltipContents = Array.from(this.children[0].children)
                 .find((child) => child.className === 'tippy-content')
 
-            console.log(tooltipContents)
             if (tooltipContents.innerHTML == '') {
-                console.log('innasd')
                 render(<PopupContents termID={this._reference.dataset.aweza}/>, tooltipContents);
             }
         }
@@ -95,8 +95,6 @@ class PopupContents extends Component {
     }
 
     componentDidMount() {
-        console.log('asd')
-
         fetchTerm(this.state.termID)
             .then(data => this.setCurrentTerm(data))
             .catch(e => {
@@ -117,7 +115,6 @@ class PopupContents extends Component {
     }
 
     setCurrentTerm(data) {
-        console.log(data)
         let currentTranslationId = null
         if (data.translations && data.translations.length > 0) {
             // Default to the first translation
