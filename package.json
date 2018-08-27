@@ -1,5 +1,5 @@
 {
-  "name": "aweza-popup",
+  "name": "@fastacademy/aweza-popup",
   "version": "1.0.0",
   "description": "The Aweza popup for web",
   "main": "index.tsx",
