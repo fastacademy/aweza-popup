@@ -16,8 +16,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/** @jsx h */
+
 import {h, render, Component} from 'preact';
 import tippy from 'tippy.js'
+
 
 let dataUrl = 'https://tms2.aweza.co.za/api/term'
 let headers = {}
