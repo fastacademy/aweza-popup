@@ -21,8 +21,6 @@ jobs:
         name: Publish to NPM
         command: |
           if [ "$CIRCLE_BRANCH" == 'master' ]; then
-            tar -cvf npm.tar index.tsx aweza-popup.css package.json README.md LICENSE.md dist
-
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
             npm publish
           fi;
