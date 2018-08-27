@@ -31,29 +31,47 @@
     min-width: 150px;
     min-height: 100px;
     line-height: 1;
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
     overflow: hidden;
     border-radius: 10px;
 }
 
 .aweza-category {
-    background-color: #00aff0;
+    background-color: #2DA8C2;
     color: white;
-    padding: 5px;
+    padding: 10px;
 }
 
 .aweza-section-title {
     text-align: left;
-    background-color: #efefef;
+    background-color: #f2f2f2;
     padding: 5px;
     padding-left: 15px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .aweza-section-content {
     padding: 2px;
-    font-size: 10px;
+    font-size: 12px;
+    color: #373737;
+    margin-bottom: 5px;
+}
+
+.tippy-tooltip hr {
+    background: #979797;
+    height: 1px;
+    border: 0;
+    margin: 10px 10px 5px 10px;
+}
+
+.aweza-section-content-text {
+    padding: 6px 6px 0 6px;
+}
+
+.aweza-example-content-text-text,
+.aweza-definition-text-text {
+    width: 100%;
 }
 
 .aweza-definition-text {
@@ -67,7 +85,7 @@
 }
 
 .aweza-audio {
-    padding: 2px;
+    padding: 2px 5px 2px 2px;
 }
 
 .aweza-definition-text-left {
@@ -86,17 +104,30 @@
     display: flex;
 }
 
+.aweza-image {
+    text-align: center;
+}
 .aweza-image > img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 280px;
+    max-height: 280px;
+    margin: 20px auto 10px auto;
 }
 
 .aweza-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #9fc3cfa4;
-    padding: 5px;
+    background-color: #D5EEF3;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.aweza-footer select {
+    background: 0;
+    border: 0;
+    height: 29px;
+    font-size: 12px;
 }
 
 .aweza-footer-left {
@@ -112,18 +143,31 @@
     height: 15px;
 }
 
+.language-code {
+    background: #9B9B9B;
+    border-radius: 6px;
+    padding: 4px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+
 .tippy-popper[x-placement^=right] .tippy-tooltip.aweza-theme .tippy-arrow {
-    border-right: 7px solid #00aff0;
+    border-right: 7px solid #2DA8C2;
+    margin-top: 8px;
 }
 
 .tippy-popper[x-placement^=left] .tippy-tooltip.aweza-theme .tippy-arrow {
-    border-left: 7px solid #00aff0;
+    border-left: 7px solid #2DA8C2;
 }
 
 .tippy-popper[x-placement^=top] .tippy-tooltip.aweza-theme .tippy-arrow {
-    border-top: 7px solid #00aff0;
+    border-top: 7px solid #2DA8C2;
 }
 
 .tippy-popper[x-placement^=bottom] .tippy-tooltip.aweza-theme .tippy-arrow {
-    border-bottom: 7px solid #00aff0;
+    border-bottom: 7px solid #2DA8C2;
 }

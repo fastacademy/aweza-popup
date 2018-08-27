@@ -69,7 +69,7 @@ function AwezaPopup(options) {
         multiple: false,
         arrow: true,
         theme: 'aweza',
-        maxWidth: '250px',
+        maxWidth: '320px',
         duration: [50, 50],
         html: '#aweza-popup-app',
         onShown() {
@@ -214,14 +214,14 @@ class DefinitionText extends Component {
 
         const audio_player_id = `aweza-term-${this.props.id}-text-audio`;
         return (
-            <div class="aweza-definition-text">
+            <div class="aweza-definition-text aweza-section-content-text">
                 <div class="aweza-definition-text-left">
                     <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                     <div class="aweza-definition-content-text-text">
                         <b>{this.props.text}</b>
                     </div>
                 </div>
-                <div class="aweza-definition-content-text-right">
+                <div class="aweza-definition-content-text-right language-code">
                     {this.props.language.code.toUpperCase()}
                 </div>
             </div>
@@ -241,7 +241,7 @@ class DefinitionDescription extends Component {
 
         const audio_player_id = `aweza-term-${this.props.id}-definition-audio`;
         return (
-            <div class="aweza-definition-description">
+            <div class="aweza-definition-description aweza-section-content-text">
                 <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                 <div class="aweza-definition-description">
                     {this.props.description}
@@ -279,20 +279,22 @@ class ExampleText extends Component {
                 null
 
         const audio_player_id = `aweza-term-${this.props.id}-example-audio`;
+        if(this.props.tts.example.length > 0) {
         return (
-            <div class="aweza-example-text">
-                <div class="aweza-example-text-left">
+            <div class="aweza-example-text aweza-section-content-text">
                     <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
-                    <div>
+                    <div class="aweza-example-content-text-text">
                         {this.props.example}
                     </div>
-                </div>
-
                 <div>
-                    {this.props.language.code.toUpperCase()}
+                    <div class="aweza-example-content-text-right language-code">
+                        {this.props.language.code.toUpperCase()}
+                    </div>
                 </div>
             </div>
         )
+        }
+
     }
 }
 
