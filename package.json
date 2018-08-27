@@ -2,7 +2,7 @@
   "name": "aweza-popup",
   "version": "1.0.0",
   "description": "The Aweza popup for web",
-  "main": "index.js",
+  "main": "index.tsx",
   "author": "Werner Roets <werner@fastacademy.co.za>",
   "license": "GPL-3.0-only",
   "scripts": {

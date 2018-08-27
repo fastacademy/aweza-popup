@@ -19,7 +19,7 @@
 import {h, render, Component} from 'preact';
 import tippy from 'tippy.js'
 
-let dataUrl = 'http://tms2.aweza.co.za/api/term'
+let dataUrl = 'https://tms2.aweza.co.za/api/term'
 let headers = {}
 let preferLang = null
 let tippyInstance = null
