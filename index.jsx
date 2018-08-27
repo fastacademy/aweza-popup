@@ -95,7 +95,6 @@ class PopupContents extends Component {
     }
 
     componentDidMount() {
-        console.log('asd')
 
         fetchTerm(this.state.termID)
             .then(data => this.setCurrentTerm(data))

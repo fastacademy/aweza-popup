@@ -1,0 +1,8 @@
+node_modules
+yarn-error.log
+.cache
+.idea
+.circleci
+example.html
+.gitignore
+.cache
