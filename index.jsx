@@ -244,7 +244,7 @@ class DefinitionDescription extends Component {
             <div class="aweza-definition-description aweza-section-content-text">
                 <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                 <div class="aweza-definition-description">
-                    {this.props.description}
+                    <div dangerouslySetInnerHTML={{ __html: this.props.description}}/>
                 </div>
             </div>
         )
@@ -284,7 +284,7 @@ class ExampleText extends Component {
             <div class="aweza-example-text aweza-section-content-text">
                     <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                     <div class="aweza-example-content-text-text">
-                        {this.props.example}
+                        <div dangerouslySetInnerHTML={{ __html: this.props.example}}/>
                     </div>
                 <div>
                     <div class="aweza-example-content-text-right language-code">
