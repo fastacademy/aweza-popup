@@ -284,7 +284,7 @@ class ExampleText extends Component {
             <div class="aweza-example-text aweza-section-content-text">
                     <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                     <div class="aweza-example-content-text-text">
-                        <div dangerouslySetInnerHTML={{ __html: }}/>
+                        <div dangerouslySetInnerHTML={{ __html: this.props.example}}/>
                     </div>
                 <div>
                     <div class="aweza-example-content-text-right language-code">
