@@ -46,8 +46,7 @@
 .aweza-section-title {
     text-align: left;
     background-color: #f2f2f2;
-    padding: 5px;
-    padding-left: 15px;
+    padding: 5px 5px 5px 15px;
     font-size: 14px;
 }
 
@@ -104,13 +103,24 @@
     display: flex;
 }
 
+.aweza-popup-content p,
+.aweza-popup-content h1,
+.aweza-popup-content h2,
+.aweza-popup-content h3,
+.aweza-popup-content h4,
+.aweza-popup-content h5
+{
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
 .aweza-image {
     text-align: center;
 }
 .aweza-image > img {
     max-width: 280px;
     max-height: 280px;
-    margin: 20px auto 10px auto;
+    margin: 10px;
 }
 
 .aweza-footer {
