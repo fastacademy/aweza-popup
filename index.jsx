@@ -35,6 +35,8 @@ function fetchTerm(id) {
     }).then(response => {
         if (response.status === 404) {
             throw 'Error: Term not found'
+        } else if (response.status === 401) {
+            throw 'Error: Unauthorized. Check your credentials.'
         }
         return response.json()
     })
@@ -152,7 +154,8 @@ class PopupContents extends Component {
         if (this.state.loading) {
             return <div>Loading...</div>
         }
-        const translationTerm = this.state.term.translations.length > 0 ? this.state.term.translations
+
+        const translationTerm = (this.state.term.translations && this.state.term.translations.length > 0) ? this.state.term.translations
             .find(translation => this.state.currentTranslationId === translation.id).to_term : null
 
         const categoryTitle = this.state.term.categories ?
@@ -204,14 +207,16 @@ class DefinitionSection extends Component {
 
 class DefinitionText extends Component {
     render() {
-        const audio_source = this.props.audio ?
-            this.props.audio
-            :
-            this.props.tts.text.length > 0 ?
-                this.props.tts.text[0].url
-                :
-                null
+        let audio_source = null
+        
+        if (this.props.tts) {
+            audio_source = this.props.tts.text.length > 0 ? this.props.tts.text[0].url : null
+        } 
 
+        if (this.props.audio) {
+            audio_source = this.props.audio
+        }
+        
         const audio_player_id = `aweza-term-${this.props.id}-text-audio`;
         return (
             <div class="aweza-definition-text aweza-section-content-text">
@@ -231,13 +236,15 @@ class DefinitionText extends Component {
 
 class DefinitionDescription extends Component {
     render() {
-        const audio_source = this.props.description_audio ?
-            this.props.description_audio
-            :
-            this.props.tts.description.length > 0 ?
-                this.props.tts.description[0].url
-                :
-                null
+        let audio_source = null
+        
+        if (this.props.tts) {
+            audio_source = this.props.tts.description.length > 0 ? this.props.tts.description[0].url : null
+        } 
+
+        if (this.props.audio) {
+            audio_source = this.props.audio
+        }
 
         const audio_player_id = `aweza-term-${this.props.id}-definition-audio`;
         return (
