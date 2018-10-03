@@ -1,20 +1,17 @@
 {
   "name": "awezapopup",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "The Aweza popup for web",
   "main": "index.jsx",
   "author": "Werner Roets <werner@fastacademy.co.za>",
   "license": "GPL-3.0-only",
   "scripts": {
     "production": "node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
-    "watch": "node_modules/.bin/parcel watch --no-hmr index.jsx --out-file aweza-popup.js",
-    "watch-style": "node_modules/.bin/csso style.css --watch --output dist/aweza-popup.css",
-    "dev": "node_modules/.bin/parcel --no-hmr index.jsx --out-file aweza-popup.js && node_modules/.bin/csso style.css --output dist/aweza-popup.css"
+    "dev": "./dev.sh"
   },
   "devDependencies": {
     "csso-cli": "^1.1.0",
-    "parcel-bundler": "^1.9.7",
-    "typescript": "^3.0.1"
+    "parcel-bundler": "^1.9.7"
   },
   "dependencies": {
     "preact": "^8.3.1",
