@@ -1,37 +1,64 @@
+[![](https://data.jsdelivr.com/v1/package/npm/awezapopup/badge)](https://www.jsdelivr.com/package/npm/awezapopup)
+[![CircleCI](https://circleci.com/gh/fastacademy/aweza-popup.svg?style=svg)](https://circleci.com/gh/fastacademy/aweza-popup)
 # Aweza Popup
 A popup for the Aweza platform based on tippy.js 
+
+## Install
 ### Yarn
 ```bash
-yarn add aweza-popup
+yarn add awezapopup
 ```
-
+### NPM
+```bash
+npm install --save awezapopup
+```
 ```js
-import AwezaPopup from 'aweza-popup'
+import AwezaPopup from 'awezapopup'
 AwezaPopup({
-  dataUrl: 'http://awezatms.test/api/term',
   headers: {
-    "AWEZA-KEY": 'a9e4db54cecd597b8afd3325d185d302',
-    "AWEZA-SECRET": '07ecf23fa58ca8a1464d6c212e2d8c505ea960ca6dd9104ea1062fcacd63b375'
+    "AWEZA-KEY": 'a9e4........d302',
+    "AWEZA-SECRET": '07ecf........b375'
   }
 })
 ```
-### Manual
+## CDN
 ```html
-<script src="aweza-popup.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awezapopup@3.0.0/dist/aweza-popup.min.css">
+<script src="https://cdn.jsdelivr.net/npm/awezapopup@3.0.0/dist/aweza-popup.min.js"></script>
 <script>
   window.onload = function() {
     window.AwezaPopup({
-      dataUrl: 'http://awezatms.test/api/term',
       headers: {
-        "AWEZA-KEY": 'a9e4db54cecd597b8afd3325d185d302',
-        "AWEZA-SECRET": '07ecf23fa58ca8a1464d6c212e2d8c505ea960ca6dd9104ea1062fcacd63b375'
+        "AWEZA-KEY": 'a9e4........d302',
+        "AWEZA-SECRET": '07ecf........b375'
       }
     })
   }
 </script>
 ```
 
-### Awezification
+## Usage
+```js
+AwezaPopup(options)
+```
+Options
+- dataUrl: The URL of the Aweza API (optional)
+- headers: An object containing custom request headers. Required for Authentication.
+- preferLang: The two digit ISO 639-1 language code of the prefered language to translate to.
+
+## Example
+```js
+AwezaPopup({
+  headers: {
+    "AWEZA-KEY": 'a9e4........d302',
+    "AWEZA-SECRET": '07ecf........b375',
+  },
+  preferLang: 'af',
+  dataUrl: 'http://localhost:8888/api/term'
+})
+```
+
+## Awezification
 Wrap the target in a span with a **data-aweza** attribute where the value is the ID of the term
 ```html
 <span data-aweza="3">Road</span>
