@@ -223,7 +223,7 @@ class DefinitionText extends Component {
                 <div class="aweza-definition-text-left">
                     <Speaker uniqueId={audio_player_id} audio_source={audio_source} />
                     <div class="aweza-definition-content-text-text">
-                        <b>{this.props.text}</b>
+                      <div dangerouslySetInnerHTML={{ __html: this.props.text}}/>
                     </div>
                 </div>
                 <div class="aweza-definition-content-text-right language-code">
