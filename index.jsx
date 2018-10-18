@@ -193,7 +193,7 @@ class DefinitionSection extends Component {
           {this.props.translationTerm &&
           [
             <hr/>,
-            < DefinitionText {...this.props.translationTerm}/>,
+            <DefinitionText {...this.props.translationTerm}/>,
             <DefinitionDescription {...this.props.translationTerm}/>]
           }
         </div>
@@ -239,8 +239,8 @@ class DefinitionDescription extends Component {
       audio_source = this.props.tts.description.length > 0 ? this.props.tts.description[0].url : null
     }
 
-    if (this.props.audio) {
-      audio_source = this.props.audio
+    if (this.props.description_audio) {
+      audio_source = this.props.description_audio
     }
 
     const audio_player_id = `aweza-term-${this.props.id}-definition-audio`
@@ -274,16 +274,18 @@ class ExampleSection extends Component {
 
 class ExampleText extends Component {
   render () {
-    const audio_source = this.props.example_audio ?
-      this.props.example_audio
-      :
-      this.props.tts.example.length > 0 ?
-        this.props.tts.example[0].url
-        :
-        null
+    if (this.props.example) {
+      let audio_source = null
 
-    const audio_player_id = `aweza-term-${this.props.id}-example-audio`
-    if (this.props.tts.example.length > 0) {
+      if (this.props.tts) {
+        audio_source = this.props.tts.example.length > 0 ? this.props.tts.description[0].url : null
+      }
+
+      if (this.props.example_audio) {
+        audio_source = this.props.example_audio
+      }
+
+      const audio_player_id = `aweza-term-${this.props.id}-example-audio`
       return (
         <div class="aweza-example-text aweza-section-content-text">
           <Speaker uniqueId={audio_player_id} audio_source={audio_source}/>
@@ -298,7 +300,6 @@ class ExampleText extends Component {
         </div>
       )
     }
-
   }
 }
 
