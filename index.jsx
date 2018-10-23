@@ -278,7 +278,7 @@ class ExampleText extends Component {
       let audio_source = null
 
       if (this.props.tts) {
-        audio_source = this.props.tts.example.length > 0 ? this.props.tts.description[0].url : null
+        audio_source = this.props.tts.example.length > 0 ? this.props.tts.example[0].url : null
       }
 
       if (this.props.example_audio) {
