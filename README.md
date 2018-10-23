@@ -63,3 +63,9 @@ Wrap the target in a span with a **data-aweza** attribute where the value is the
 ```html
 <span data-aweza="3">Road</span>
 ```
+
+## Development
+To run the file watchers and a php dev server, use the script provided
+```
+./dev.sh
+```
