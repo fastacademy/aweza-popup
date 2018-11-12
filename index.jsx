@@ -27,8 +27,12 @@ import DefinitionSection from './src/components/DefinitionSection'
 import ExampleSection from './src/components/ExampleSection'
 import ImageSection from './src/components/ImageSection'
 
-let dataUrl = 'https://tms2.aweza.co.za/api/term'
-let headers = {}
+let dataUrl = 'http://localhost:8000/api/term'
+let headers = {
+    'AWEZA-KEY': 'ad7183957886daf576697e9527716140',
+    'AWEZA-SECRET': '44352aa5fe2e0d18eda143991494d742e516f79f7af3d4d90ee7ca3463a10002',
+}
+
 let preferLang = null
 let tippyInstance = null
 
@@ -119,6 +123,7 @@ class PopupContents extends Component {
   }
 
   setCurrentTerm (data) {
+
     let currentTranslationId = null
     if (data.translations && data.translations.length > 0) {
       // Default to the first translation
@@ -129,13 +134,12 @@ class PopupContents extends Component {
 
         // Try to get this translation
         const translation = data.translations.find(translation => translation.language.code === preferLang)
-
+          console.log(translation);
         if (translation) {
-          currentTranslationId = translation.id
+            currentTranslationId = translation.id
         }
       }
     }
-
     this.setState({
       term: data,
       currentTranslationId: currentTranslationId,
