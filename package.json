@@ -7,11 +7,17 @@
   "license": "GPL-3.0-only",
   "scripts": {
     "production": "node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
-    "dev": "./dev.sh"
+    "dev": "./dev.sh",
+    "test": "jest"
   },
   "devDependencies": {
-    "csso-cli": "^1.1.0",
-    "parcel-bundler": "^1.9.7"
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.9.7",
+    "preact-render-to-json": "^3.6.6"
   },
   "dependencies": {
     "preact": "^8.3.1",
