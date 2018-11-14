@@ -15,6 +15,7 @@
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "csso-cli": "^1.1.0",
     "jest": "^23.6.0",
     "parcel-bundler": "^1.9.7",
     "preact-render-to-json": "^3.6.6"
@@ -24,6 +25,16 @@
     "tippy.js": "^2.5.4"
   },
   "jest": {
-    "testRegex": "(/__tests__/.*(\\.|/)(test))\\.(js|jsx)?$"
+    "testRegex": "(/__tests__/.*(\\.|/)(test))\\.(js|jsx)?$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ]
   }
 }

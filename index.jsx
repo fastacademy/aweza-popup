@@ -44,6 +44,7 @@ function fetchTerm (id) {
     else if (response.status === 401) {
       throw 'Error: Unauthorized. Check your credentials.'
     }
+    console.log(response.json());
     return response.json()
   })
 }
