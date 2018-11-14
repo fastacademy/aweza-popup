@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageSection component 1`] = `
+<div
+  class="aweza-image"
+>
+  <div
+    class="aweza-section-title"
+  >
+    <b>
+      Image
+    </b>
+  </div>
+  <img
+    src="http://platform.fastacademy.co.za/media/view/2017/06/parabola_21.png"
+  />
+</div>
+`;

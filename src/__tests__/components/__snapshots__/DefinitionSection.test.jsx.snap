@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefinitionSection component 1`] = `
+<div
+  class="aweza-definition"
+>
+  <div
+    class="aweza-section-title"
+  >
+    <b>
+      Definition
+    </b>
+  </div>
+  <div
+    class="aweza-section-content"
+  >
+    <div
+      class="aweza-definition-text aweza-section-content-text"
+    >
+      <div
+        class="aweza-definition-text-left"
+      >
+        <div
+          class="aweza-definition-content-text-text"
+        >
+          <div
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+            IParabola
+          </div>
+        </div>
+      </div>
+      <div
+        class="aweza-definition-content-text-right language-code"
+      >
+        XH
+      </div>
+    </div>
+    <div
+      class="aweza-definition-description aweza-section-content-text"
+    >
+      <div
+        class="aweza-definition-description"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Igophe elijonge phezulu okanye ezantsi, eliqala kwipoyinti c kwindawo ka-y lize liqhubeke ngokungapheliyo.</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+    <hr />
+    <div
+      class="aweza-definition-text aweza-section-content-text"
+    >
+      <div
+        class="aweza-definition-text-left"
+      >
+        <div
+          class="aweza-definition-content-text-text"
+        >
+          <div
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+            Parabola
+          </div>
+        </div>
+      </div>
+      <div
+        class="aweza-definition-content-text-right language-code"
+      >
+        EN
+      </div>
+    </div>
+    <div
+      class="aweza-definition-description aweza-section-content-text"
+    >
+      <div
+        class="aweza-definition-description"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "An up or down facing curve, starting at a point c on the y-axis and continuing to infinity.",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
