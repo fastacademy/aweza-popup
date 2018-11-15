@@ -7,7 +7,7 @@ export default class ExampleSection extends Component {
     return (
       <div class="aweza-example">
         <div class="aweza-section-title">
-          <b>Example</b>
+          <b>{this.props.term.language.example_label}</b>
         </div>
         <div class="aweza-section-content">
           <ExampleText {...this.props.term}/>

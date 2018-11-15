@@ -7,7 +7,7 @@ export default class DefinitionSection extends Component {
     return (
       <div class="aweza-definition">
         <div class="aweza-section-title">
-          <b>Definition</b>
+          <b>{this.props.term.language.definition_label}</b>
         </div>
         <div class="aweza-section-content">
           <DefinitionText {...this.props.term}/>
