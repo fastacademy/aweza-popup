@@ -25,8 +25,8 @@ export const terms = [
       "id": 3,
       "name": "isiXhosa",
       "code": "xh",
-      "definition_label": "todo",
-      "example_label": "todo"
+      "definition_label": "Definition",
+      "example_label": "Example"
     },
     "translations": [
       {
