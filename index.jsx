@@ -18,41 +18,40 @@
 
 /** @jsx h */
 
-import { h, render, Component } from 'preact'
-import tippy from 'tippy.js'
+import { h, render, Component } from "preact"
+import tippy from "tippy.js"
 
-import Header from './src/components/Header'
-import Footer from './src/components/Footer'
-import DefinitionSection from './src/components/DefinitionSection'
-import ExampleSection from './src/components/ExampleSection'
-import ImageSection from './src/components/ImageSection'
+import Header from "./src/components/Header"
+import Footer from "./src/components/Footer"
+import DefinitionSection from "./src/components/DefinitionSection"
+import ExampleSection from "./src/components/ExampleSection"
+import ImageSection from "./src/components/ImageSection"
 
-let dataUrl = 'https://tms2.aweza.co.za/api/term'
+let dataUrl = "https://tms2.aweza.co.za/api/term"
 let headers = {}
 let preferLang = null
 let tippyInstance = null
 
 function fetchTerm (id) {
   return fetch(`${dataUrl}/${id}`, {
-    method: 'GET',
-    mode: 'cors',
+    method: "GET",
+    mode: "cors",
     headers: headers,
   }).then(response => {
     if (response.status === 404) {
-      throw 'Error: Term not found'
+      throw "Error: Term not found"
     }
     else if (response.status === 401) {
-      throw 'Error: Unauthorized. Check your credentials.'
+      throw "Error: Unauthorized. Check your credentials."
     }
-    console.log(response.json());
     return response.json()
   })
 }
 
 function createTemplate () {
-  const appTemplate = document.createElement('div')
-  appTemplate.setAttribute('id', 'aweza-popup-app')
-  appTemplate.style.display = 'none'
+  const appTemplate = document.createElement("div")
+  appTemplate.setAttribute("id", "aweza-popup-app")
+  appTemplate.style.display = "none"
   document.body.appendChild(appTemplate)
 }
 
@@ -70,21 +69,21 @@ function AwezaPopup (options) {
 
   createTemplate()
 
-  tippyInstance = tippy(document.querySelectorAll('[data-aweza]'), {
-    placement: 'right',
-    trigger: 'click',
+  tippyInstance = tippy(document.querySelectorAll("[data-aweza]"), {
+    placement: "right",
+    trigger: "click",
     interactive: true,
-    animation: 'fade',
+    animation: "fade",
     multiple: false,
     arrow: true,
-    theme: 'aweza',
-    maxWidth: '320px',
+    theme: "aweza",
+    maxWidth: "320px",
     duration: [50, 50],
-    html: '#aweza-popup-app',
+    html: "#aweza-popup-app",
     onShown () {
-      const tooltipContents = Array.from(this.children[0].children).find((child) => child.className === 'tippy-content')
+      const tooltipContents = Array.from(this.children[0].children).find((child) => child.className === "tippy-content")
       // fetch term here instead and remount react component each time?
-      if (tooltipContents.innerHTML == '') {
+      if (tooltipContents.innerHTML == "") {
         render(<PopupContents termID={this._reference.dataset.aweza}/>, tooltipContents)
       }
     },
@@ -107,26 +106,27 @@ class PopupContents extends Component {
       console.error(e)
       const tooltip = tippyInstance.tooltips.find(tt => tt.reference.dataset.aweza == this.state.termID)
       const tippyContent = Array.from(tooltip.popper.firstChild.children).
-        find(child => child.className === 'tippy-content')
+        find(child => child.className === "tippy-content")
       this.setState({
-        error: 'Whoops! Aweza data could not be loaded.',
+        error: "Whoops! Aweza data could not be loaded.",
       }, () => {
         setTimeout(() => {
-          tippyContent.innerHTML = ''
+          tippyContent.innerHTML = ""
           tooltip.hide()
         }, 2000)
       })
     })
   }
 
-  setCurrentTerm (data) {
+  setCurrentTerm (data)
+  {
     let currentTranslationId = null
     if (data.translations && data.translations.length > 0) {
       // Default to the first translation
       currentTranslationId = data.translations[0].id
 
       // If there is a preferred language set in options
-      if (preferLang) {
+      if (preferLang ) {
 
         // Try to get this translation
         const translation = data.translations.find(translation => translation.language.code === preferLang)
@@ -164,7 +164,7 @@ class PopupContents extends Component {
       : null
 
     const categoryTitle = this.state.term.categories ?
-      this.state.term.categories.reduce((a, c) => a + ' | ' + c.name, '').substr(2) : ''
+      this.state.term.categories.reduce((a, c) => a + " | " + c.name, "").substr(2) : ""
 
     return (
       <div class="aweza-popup-content" style="display: flex; flex-direction: column;">
@@ -173,7 +173,7 @@ class PopupContents extends Component {
         {this.state.term.example && <ExampleSection term={this.state.term} translationTerm={translationTerm}/>}
         {this.state.term.image && <ImageSection {...this.state.term} />}
         <Footer currentTranslationId={this.state.currentTranslationId}
-                onSelectLanguage={e => this.onSelectLanguage(e)} {...this.state.term} />
+          onSelectLanguage={e => this.onSelectLanguage(e)} {...this.state.term} />
       </div>
     )
   }
