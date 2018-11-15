@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleSection component 1`] = `
+<div
+  class="aweza-example"
+>
+  <div
+    class="aweza-section-title"
+  >
+    <b>
+      Example
+    </b>
+  </div>
+  <div
+    class="aweza-section-content"
+  >
+    <hr />
+    <div
+      class="aweza-example-text aweza-section-content-text"
+    >
+      <div
+        class="aweza-example-content-text-text"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "This is an example for parabola",
+            }
+          }
+        />
+      </div>
+      <div>
+        <div
+          class="aweza-example-content-text-right language-code"
+        >
+          EN
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
