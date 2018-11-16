@@ -1,6 +1,6 @@
 {
   "name": "awezapopup",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "The Aweza popup for web",
   "main": "index.jsx",
   "author": "Werner Roets <werner@fastacademy.co.za>",
@@ -8,7 +8,9 @@
   "scripts": {
     "production": "node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
     "dev": "./dev.sh",
-    "test": "jest"
+    "test": "jest",
+    "lint": "node_modules/.bin/eslint src/ index.jsx",
+    "fix": "node_modules/.bin/eslint --fix src/ index.jsx"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -16,6 +18,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "csso-cli": "^1.1.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "parcel-bundler": "^1.9.7",
     "preact-render-to-json": "^3.6.6"

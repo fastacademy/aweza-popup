@@ -9,6 +9,6 @@ function base64ToArrayBuffer (base64) {
 }
 
 export function createAudioBlobUrl (base64Data) {
-  const blob = new Blob([base64ToArrayBuffer(base64Data)], {type: 'audio/mp3'})
+  const blob = new Blob([base64ToArrayBuffer(base64Data)], {type: "audio/mp3"})
   return window.URL.createObjectURL(blob)
 }
