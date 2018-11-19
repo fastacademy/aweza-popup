@@ -1,14 +1,14 @@
 {
   "name": "awezapopup",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "The Aweza popup for web",
-  "main": "dist/src/index.js",
+  "main": "src/index.js",
   "author": "Werner Roets <werner@fastacademy.co.za>",
   "license": "GPL-3.0-only",
   "scripts": {
     "production": "yarn transpile && node_modules/.bin/parcel build src/index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
     "dev": "./dev.sh",
-    "transpile": "babel src/index.jsx -d dist --copy-files",
+    "transpile": "babel src/index.jsx -d . --copy-files",
     "clean": "rm -rf dist/*",
     "test": "jest",
     "lint": "node_modules/.bin/eslint src/",
