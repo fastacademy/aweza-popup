@@ -9,7 +9,7 @@
     "production": "yarn transpile && node_modules/.bin/parcel build src/index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
     "dev": "./dev.sh",
     "transpile": "babel src/index.jsx -d . --copy-files",
-    "clean": "rm -rf dist/*",
+    "clean": "rm -rf dist/* src/index.js",
     "test": "jest",
     "lint": "node_modules/.bin/eslint src/",
     "fix": "node_modules/.bin/eslint --fix src/"
