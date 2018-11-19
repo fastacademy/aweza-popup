@@ -6,12 +6,12 @@
   "author": "Werner Roets <werner@fastacademy.co.za>",
   "license": "GPL-3.0-only",
   "scripts": {
-    "production": "yarn transpile && node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
+    "production": "yarn transpile && node_modules/.bin/parcel build src/index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
     "dev": "./dev.sh",
-    "transpile": "babel index.jsx -d dist --copy-files",
+    "transpile": "babel src/index.jsx -d dist --copy-files",
     "test": "jest",
-    "lint": "node_modules/.bin/eslint src/ index.jsx",
-    "fix": "node_modules/.bin/eslint --fix src/ index.jsx"
+    "lint": "node_modules/.bin/eslint src/",
+    "fix": "node_modules/.bin/eslint --fix src/"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
