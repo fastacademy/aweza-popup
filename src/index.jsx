@@ -21,11 +21,11 @@
 import { h, render, Component } from "preact"
 import tippy from "tippy.js"
 
-import Header from "./src/components/Header"
-import Footer from "./src/components/Footer"
-import DefinitionSection from "./src/components/DefinitionSection"
-import ExampleSection from "./src/components/ExampleSection"
-import ImageSection from "./src/components/ImageSection"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import DefinitionSection from "./components/DefinitionSection"
+import ExampleSection from "./components/ExampleSection"
+import ImageSection from "./components/ImageSection"
 
 let dataUrl = "https://tms2.aweza.co.za/api/term"
 let headers = {}
