@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Start processes
-node_modules/.bin/parcel watch --no-hmr index.jsx --out-file aweza-popup.js & jspid=$!
-node_modules/.bin/csso style.css --watch --output dist/aweza-popup.css & csspid=$!
+node_modules/.bin/parcel watch --no-hmr src/index.jsx --out-file aweza-popup.js & jspid=$!
+node_modules/.bin/csso src/style.css --watch --output dist/aweza-popup.css & csspid=$!
 php -S localhost:8882 & servpid=$!
 PID_LIST+="$jspid $csspid $servpid";
 
