@@ -3,32 +3,8 @@
 # Aweza Popup
 The Aweza popup for web.  
 
-## yarn
-```bash
-yarn add awezapopup
-```
-## Usage
-
-#### Sass
-```sass
-@import "~awezapopup/dist/aweza-popup.min.css";
-```
-To support KaTeX symbols in the popup content, you must include the KaTeX stylesheet seperately.
-```sass
-@import "~katex/dist/katex.css";
-```
-#### JS
-```js
-import AwezaPopup from 'awezapopup';
-
-AwezaPopup({
-  headers: {
-    "AWEZA-KEY": 'YOUR-KEY-HERE',
-    "AWEZA-SECRET": 'YOUR-SECRET-HERE'
-  }
-})
-```
-## CDN
+## Install
+### CDN
 When loading the script from a CDN, the AwezaPopup object will be available as a property of window.
 ```html
 <!-- Script -->
@@ -49,6 +25,34 @@ When loading the script from a CDN, the AwezaPopup object will be available as a
 <!-- To support KaTeX symbols in the popup content, you must include the KaTeX stylesheet seperately. -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"/>
 ```
+### yarn / npm
+Install with the package manger of your choice
+```bash
+yarn add awezapopup
+```
+```bash
+npm install --save awezapopup
+```
+#### Import CSS / Sass
+```sass
+@import "~awezapopup/dist/aweza-popup.min.css";
+```
+To support KaTeX symbols in the popup content, you must include the KaTeX stylesheet seperately.
+```sass
+@import "~katex/dist/katex.css";
+```
+##### Import JS
+```js
+import AwezaPopup from 'awezapopup';
+
+AwezaPopup({
+  headers: {
+    "AWEZA-KEY": 'YOUR-KEY-HERE',
+    "AWEZA-SECRET": 'YOUR-SECRET-HERE'
+  }
+})
+```
+
 
 ## Usage
 ```js
