@@ -4,13 +4,13 @@
 The Aweza popup for web.  
 
 ## yarn
-```
+```bash
 yarn add awezapopup
 ```
 ## Usage
 
 #### Sass
-```
+```sass
 @import "~awezapopup/dist/aweza-popup.min.css";
 ```
 To support KaTeX symbols in the popup content, you must include the KaTeX stylesheet seperately.
@@ -18,7 +18,7 @@ To support KaTeX symbols in the popup content, you must include the KaTeX styles
 @import "~katex/dist/katex.css";
 ```
 #### JS
-```
+```js
 import AwezaPopup from 'awezapopup';
 
 AwezaPopup({
@@ -68,7 +68,7 @@ Wrap the target in a span with a **data-aweza** attribute where the value is the
 
 ## Development
 To run the file watchers and a php dev server, use the script provided
-```
+```bash
 ./dev.sh
 ```
 ## License
