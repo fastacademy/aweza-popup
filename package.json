@@ -1,6 +1,6 @@
 {
   "name": "awezapopup",
-  "version": "3.1.8",
+  "version": "3.2.0",
   "description": "The Aweza popup for web",
   "main": "dist/src/index.js",
   "author": "Werner Roets <werner@fastacademy.co.za>",
