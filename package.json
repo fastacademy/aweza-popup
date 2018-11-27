@@ -6,7 +6,7 @@
   "author": "Werner Roets <werner@fastacademy.co.za>",
   "license": "GPL-3.0-only",
   "scripts": {
-    "production": "node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso style.css --output dist/aweza-popup.min.css",
+    "production": "node_modules/.bin/parcel build index.jsx --out-file aweza-popup.min.js --public-url . && node_modules/.bin/csso src/style.css --output dist/aweza-popup.min.css",
     "dev": "./dev.sh",
     "test": "jest",
     "lint": "node_modules/.bin/eslint src/ index.jsx",
